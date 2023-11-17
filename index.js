@@ -21,6 +21,10 @@ MongoClient.connect(connectionString)
       res.send("Hey this is my API running 🥳");
     });
 
+    app.get("/api/", (req, res) => {
+      res.send("wow, it actually worked");
+    });
+
     app.get("/api/speckle-teachers", async (req, res) => {
       try {
         const teachers = await collectionTeachers.find({}).toArray();
