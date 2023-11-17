@@ -12,7 +12,7 @@ MongoClient.connect(connectionString)
     console.log("Connected to database");
     const db = client.db("speckle");
     const collectionTeachers = db.collection("speckle-teachers");
-    //CRUD requests
+    /// CRUD REQUESTS GO HERE
   })
   .catch((error) => console.log(error));
 
