@@ -11,15 +11,15 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
+
 MongoClient.connect(connectionString)
   .then((client) => {
     console.log("Connected to database");
     const db = client.db("speckle");
     const collectionTeachers = db.collection("speckle-teachers");
-
-    app.get("/", (req, res) => {
-      res.send("Hey this is my API running 🥳");
-    });
 
     app.get("/api/", (req, res) => {
       res.send("wow, it actually worked");
