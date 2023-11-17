@@ -17,7 +17,7 @@ MongoClient.connect(connectionString)
     const db = client.db("speckle");
     const collectionTeachers = db.collection("speckle-teachers");
 
-    app.get("/api", (req, res) => {
+    app.get("/home", (req, res) => {
       res.status(200).json("HI! Speckle Api!");
     });
 
